@@ -10,12 +10,12 @@
 }:
 let
   pname = "openaudible";
-  version = "v3.7.6.2";
+  version = "3.8.1";
   name = "${pname}-${version}";
 
   src = fetchurl {
-    url = "https://github.com/openaudible/openaudible/releases/download/v3.7.6.2/OpenAudible_3.7.6.2_x86_64.AppImage";
-    sha512 = "1k66hadkmh0iy45zwkirx2yli2v5sxr742nqmkfbc2nkcng6y9xfs9sisbxd3fbs5zcx9nsxx2qbag5lzidx8gx5n6jg56z1wgln5wi";
+    url = "https://github.com/openaudible/openaudible/releases/download/v3.8.1/OpenAudible_3.8.1_x86_64.AppImage";
+    sha512 = "1bvzrfnf87av1wg51d682iq0wa49mxwbhcmpl1rcjihgldnincwadid92c74b30zfzf5acg2l283pqykjg61g4d3lgyvsp6rqyifhf4";
   };
 
   appimageContents = appimageTools.extractType2 { inherit name src; };
