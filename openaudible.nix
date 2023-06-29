@@ -24,6 +24,9 @@ let
     buildInputs = [  ];
   } ''
     mkdir -p $out/bin $out/share/${pname}/applications $out/share/${pname}/resources
+    
+    install -m 444 -D ${appimageContents}/icons/512x512.png $out/share/icons/${pname}.png
+
     cp ${appimageContents}/openaudible_gtk_x86_64.jar $out/share/${pname}/resources/openaudible.jar
   '';
 
@@ -34,6 +37,7 @@ let
   desktopItem = makeDesktopItem {
     name = pname;
     exec = "openaudible";
+    icon = "${appContents}/share/icons/${pname}.png";
     desktopName = "Open Audible";
     comment = "OpenAudible is a cross-platform audiobook manager designed for Audible users. Manage all your audiobooks with this easy-to-use desktop application.";
   };
